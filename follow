@@ -1,0 +1,19 @@
+<script type="text/javascript">
+
+    // Use this function to access the current TM1 Web object
+    function getActiveWidget() {
+        return dijit.byId("tabContainer").selectedChildWidget;
+    };
+
+    // Rebuild the active form in a Websheet
+    // ----------------------
+    function rebuildActiveForms() {
+        loadedWebsheet.rebuildActiveForms().then(
+            function() {
+            	console.debug("Active form rebuild completed.");
+        	},
+        	function(message) {
+        	    console.error(message);
+        	}
+        );
+    };
